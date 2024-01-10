@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val retrofitService = RetroFitInstance.getRetroFitInstance().create(AlbumService ::class.java)
-            val res = 100
+            val res = 1000
         val responseLiveData: LiveData<Response<Albums>> =
         liveData{
             val response = retrofitService.getAlbums()
