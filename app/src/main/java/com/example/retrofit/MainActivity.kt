@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val retrofitService = RetroFitInstance.getRetroFitInstance().create(AlbumService ::class.java)
-            val res = 0
+            val res = 10
         val responseLiveData: LiveData<Response<Albums>> =
         liveData{
             val response = retrofitService.getAlbums()
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             val albumList = it.body()?.listIterator()
             if(albumList!= null){
                 while (albumList.hasNext()){
-                    val albumItems = albumList.next()
+                    val albumItem = albumList.next()
                     val albumTitle = "Album Title :${albumItem.title}"
                     binding.titletextview.append(albumTitle)
                 }
