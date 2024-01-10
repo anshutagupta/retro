@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             if(albumList!= null){
                 while (albumList.hasNext()){
                     val albumItem = albumList.next()
-                    val albumTitle = "Album Title :${albumItem.title}\n"
+                    val albumTitle = "Album Title :${albumItem.title}"
                     binding.titletextview.append(albumTitle)
                 }
             }
